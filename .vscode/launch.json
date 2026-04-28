@@ -1,24 +1,32 @@
 {
-    // Use IntelliSense to learn about possible attributes.
-    // Hover to view descriptions of existing attributes.
-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        {
+            "name": "React Frontend (npm dev)",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "npm",
+            "runtimeArgs": ["run", "dev"],
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"]
+        },
+        {
+            "name": "Spring Boot API (mvn)",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": "mvn",
+            "runtimeArgs": ["org.springframework.boot:spring-boot-maven-plugin:run"],
+            "cwd": "${workspaceFolder}/api",
+            "console": "integratedTerminal",
+            "skipFiles": ["<node_internals>/**"]
+        },
         {
             "name": "Attach to Chrome",
             "port": 9222,
             "request": "attach",
             "type": "chrome",
             "webRoot": "${workspaceFolder}"
-        },
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "skipFiles": [
-                "<node_internals>/**"
-            ],
-            "program": "${file}"
         }
     ]
 }
